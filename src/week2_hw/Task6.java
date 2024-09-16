@@ -34,14 +34,21 @@ class Task6WithReverse {
         String inputString = scanner.nextLine();
         scanner.close();
         String reversedString = form(inputString, inputString.length() - 1, "");
-        System.out.println("Reversed string: " + reversedString);
+        System.out.println(inputString + reversedString);
     }
 
     private static String form(String text, int n, String reversedText) {
         if (n < 0) {
             return reversedText;
         }
-        reversedText += text.charAt(n);
+        char currentChar = text.charAt(n);
+        if (currentChar == '(') {
+            reversedText += ')';
+        } else if (currentChar == ')') {
+            reversedText += '(';
+        } else {
+            reversedText += currentChar;
+        }
         return form(text, n - 1, reversedText);
     }
 }

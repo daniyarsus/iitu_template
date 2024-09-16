@@ -35,18 +35,23 @@ class Task1WithReverse {
         System.out.println("Enter number: ");
         int number = scanner.nextInt();
         scanner.close();
-        count(number, 1, false);
+
+        if (count(number, 1)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
     }
 
-    private static void count(
-            int number,
-            int n,
-            boolean canObtain
-    ) {
-        if (n <= 0) {
-            System.out.println(canObtain);
-            return;
+    private static boolean count(int number, int n) {
+        if (n > number) {
+            return false;
         }
-        count(number, n += 3, canObtain);
+
+        if ((number - n) % 5 == 0) {
+            return true;
+        }
+
+        return count(number, n + 3);
     }
 }
