@@ -14,10 +14,12 @@ public class Task1 {
 
     private static void count(int number) {
         boolean canObtain = false;
-        for (int i = 1; i <= number; i += 3) {  // Добавляем по 3 в цикле
-            if ((number - i) % 5 == 0) {  // Если оставшееся число делится на 5, значит можно получить N
+        for (int i = 1; i <= number; i += 3) {
+            if ((number - i) % 5 == 0) {
                 canObtain = true;
                 break;
+            } else {
+                canObtain = false;
             }
         }
 
