@@ -7,18 +7,18 @@ public class TheMyCircleAndMyPointClasses {
 
         Cylinder cy1 = new Cylinder();
         System.out.println(cy1);
-        System.out.println("Base area is: " + cy1.getBaseArea());
+        System.out.println("Base area: " + cy1.getBaseArea());
         System.out.println("Volume is: " + cy1.getVolume());
 
-        Cylinder cy2 = new Cylinder(2.0, 10.0);
+        Cylinder cy2 = new Cylinder(2.2, 10.0);
         System.out.println(cy2);
-        System.out.println("Base area is: " + cy2.getBaseArea());
-        System.out.println("Volume is: " + cy2.getVolume());
+        System.out.println("Base area: " + cy2.getBaseArea());
+        System.out.println("Volume: " + cy2.getVolume());
 
-        Cylinder cy3 = new Cylinder(2.0, 10.0, "yellow");
+        Cylinder cy3 = new Cylinder(2.2, 10.0, "yellow");
         System.out.println(cy3);
-        System.out.println("Base area is: " + cy3.getBaseArea());
-        System.out.println("Volume is: " + cy3.getVolume());
+        System.out.println("Base area: " + cy3.getBaseArea());
+        System.out.println("Volume: " + cy3.getVolume());
     }
 }
 
@@ -27,13 +27,14 @@ class Circle {
     private String color;
 
     public Circle() {
-        this.radius = 1.0;
+        this.radius = 3.5;
         this.color = "red";
     }
 
     public Circle(double radius) {
+        Circle c = new Circle();
         this.radius = radius;
-        this.color = "red";
+        this.color = c.color;
     }
 
     public Circle(double radius, String color) {

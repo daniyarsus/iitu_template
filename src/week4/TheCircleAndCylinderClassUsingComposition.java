@@ -2,7 +2,7 @@ package week4;
 
 public class TheCircleAndCylinderClassUsingComposition {
     public static void main(String[] args) {
-        Cylinder2 cylinder = new Cylinder2(2.0, "blue", 5.0);
+        Cylinder2 cylinder = new Cylinder2(2.0, "red", 5.0);
 
         System.out.println("Color: " + cylinder.getColor());
         System.out.println("Radius: " + cylinder.getRadius());
