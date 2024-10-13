@@ -49,35 +49,35 @@ class MovablePoint2 implements Movable2 {
 
 class MovableCircle2 implements Movable2 {
     private final int radius;
-    private final MovablePoint center;
+    private final MovablePoint2 center;
 
-    public MovableCircle2(int x, int y, int xSpeed, int ySpeed, int radius) {
+    MovableCircle2(int radius, MovablePoint2 center) {
         this.radius = radius;
-        this.center = new MovablePoint(x, y, xSpeed, ySpeed);
+        this.center = center;
     }
 
     @Override
     public void moveUp() {
-        center.moveUp();
+        this.center.moveUp();
     }
 
     @Override
     public void moveDown() {
-        center.moveDown();
+        this.center.moveDown();
     }
 
     @Override
     public void moveLeft() {
-        center.moveLeft();
+        this.center.moveLeft();
     }
 
     @Override
     public void moveRight() {
-        center.moveRight();
+        this.center.moveRight();
     }
 
     @Override
     public String toString() {
-        return "MovableCircle[center=" + center + ", radius=" + radius + "]";
+        return "(" + center.x + ", " + center.y + ")";
     }
 }
