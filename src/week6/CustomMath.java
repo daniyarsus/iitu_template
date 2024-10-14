@@ -3,15 +3,18 @@ package week6;
 public class CustomMath implements ICustomMath {
     public static void main(String[] args) {
         CustomMath customMath = new CustomMath();
+
+        float Pi = (float) customMath.pi(1000);
+
         System.out.println("5^2 = " + customMath.power(5, 2));
         System.out.println("Pi approximation with 1000 terms: " + customMath.pi(1000));
         System.out.println("exp(1) approximation with 10 terms: " + customMath.exp(10));
         System.out.println("Factorial of 5: " + customMath.factorial(5));
         System.out.println("Square root of 25: " + customMath.sqrt(25));
-        System.out.println("sin(π/2): " + customMath.sin(Math.PI / 2));
-        System.out.println("cos(π): " + customMath.cos(Math.PI));
-        System.out.println("tan(π/4): " + customMath.tan(Math.PI / 4));
-        System.out.println("cot(π/4): " + customMath.cot(Math.PI / 4));
+        System.out.println("sin(Pi/2): " + customMath.sin(Pi / 2));
+        System.out.println("cos(Pi): " + customMath.cos(Pi));
+        System.out.println("tan(Pi/4): " + customMath.tan(Pi / 4));
+        System.out.println("cot(Pi/4): " + customMath.cot(Pi / 4));
     }
 
     @Override
