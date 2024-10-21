@@ -6,15 +6,14 @@ public class CustomMath implements ICustomMath {
 
         float Pi = (float) customMath.pi(1000);
 
-        System.out.println("5^2 = " + customMath.power(5, 2));
-        System.out.println("Pi approximation with 1000 terms: " + customMath.pi(1000));
-        System.out.println("exp(1) approximation with 10 terms: " + customMath.exp(10));
-        System.out.println("Factorial of 5: " + customMath.factorial(5));
-        System.out.println("Square root of 25: " + customMath.sqrt(25));
-        System.out.println("sin(Pi/2): " + customMath.sin(Pi / 2));
-        System.out.println("cos(Pi): " + customMath.cos(Pi));
-        System.out.println("tan(Pi/4): " + customMath.tan(Pi / 4));
-        System.out.println("cot(Pi/4): " + customMath.cot(Pi / 4));
+        System.out.println(customMath.power(5, 2));
+        System.out.println(customMath.exp(10));
+        System.out.println(customMath.factorial(5));
+        System.out.println(customMath.sqrt(25));
+        System.out.println(customMath.sin(Pi / 2));
+        System.out.println(customMath.cos(Pi));
+        System.out.println(customMath.tan(Pi / 4));
+        System.out.println(customMath.cot(Pi / 4));
     }
 
     @Override
@@ -48,30 +47,22 @@ public class CustomMath implements ICustomMath {
 
     @Override
     public double factorial(int n) {
-        if (n == 0) return 1;
-        double fact = 1;
+        double x = 1;
+        double sum = 1.0;
         for (int i = 1; i <= n; i++) {
-            fact *= i;
+            sum *= x;
+            x *= i;
         }
-        return fact;
+        return sum;
     }
 
     @Override
     public double power(double x, double y) {
-        double result = 1;
-
-        if (y > 0) {
-            for (int i = 0; i < y; i++) {
-                result *= x;
-            }
-        } else if (y < 0) {
-            for (int i = 0; i < -y; i++) {
-                result *= x;
-            }
-            result = 1 / result;
+        if (y == 0) {
+            return 1;
+        } else {
+            return x * power(x, y - 1);
         }
-
-        return result;
     }
 
     @Override
