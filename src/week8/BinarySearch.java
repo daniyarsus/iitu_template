@@ -1,13 +1,15 @@
 package week8;
 
 public class BinarySearch {
-    public static int binarySearch(int[] array, int target) {
-        int left = 0;
-        int right = array.length - 1;
+    int left = 0;
+    int right = 0;
+    int mid = 0;
+
+    public int binarySearch(int[] array, int target) {
+        right = array.length - 1;
 
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-
+            mid = left + (right - left) / 2;
             if (array[mid] == target) {
                 return mid;
             }
@@ -18,20 +20,32 @@ public class BinarySearch {
                 right = mid - 1;
             }
         }
-
         return -1;
     }
 
     public static void main(String[] args) {
-        int[] sortedArray = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
-        int target = 7;
+        BinarySearch binarySearch = new BinarySearch();
 
-        int result = binarySearch(sortedArray, target);
+        int[] numbers = new int[1_000_000];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
+        }
+        int target = 5888457;
+
+        long start = System.nanoTime();
+
+        int result = binarySearch.binarySearch(numbers, target);
+
+        long finish = System.nanoTime();
+
+        double timeResult = (finish - start) / 1_000_000.0;
 
         if (result != -1) {
             System.out.println("Element index found on: " + result);
         } else {
             System.out.println("Element not found!");
         }
+
+        System.out.printf("Time taken: %.6f milliseconds%n", timeResult);
     }
 }
