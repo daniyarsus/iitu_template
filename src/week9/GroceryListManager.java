@@ -9,9 +9,9 @@ public class GroceryListManager {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean running = true;
+        boolean run = true;
 
-        while (running) {
+        while (run) {
             System.out.println("\nДоступные действия:");
             System.out.println("0 - завершить работу");
             System.out.println("1 - добавить товар в список");
@@ -22,7 +22,7 @@ public class GroceryListManager {
             scanner.nextLine();
 
             if (choice == 0) {
-                running = false;
+                run = false;
                 System.out.println("Завершение работы...");
             } else if (choice == 1) {
                 addItem(scanner);
@@ -58,18 +58,14 @@ public class GroceryListManager {
 
         if (groceryList.contains(item)) {
             groceryList.remove(item);
-            System.out.println("Товар удален.");
         } else {
-            System.out.println("Товар не найден в списке.");
+            System.out.println("Предмета нет в списке.");
         }
-
-        Collections.sort(groceryList);
     }
 
     private static void printList() {
-        System.out.println("Текущий список покупок:");
         for (String item : groceryList) {
-            System.out.println("- " + item);
+            System.out.println(item);
         }
     }
 }
