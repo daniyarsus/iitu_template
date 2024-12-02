@@ -21,4 +21,12 @@ class DesignHashMap {
     public void remove(int key) {
         map[key] = -1;
     }
+
+    public static void main(String[] args) {
+        DesignHashMap designHashMap = new DesignHashMap();
+        designHashMap.put(1, 1);
+        designHashMap.put(2, 2);
+        designHashMap.remove(2);
+        designHashMap.get(1);
+    }
 }

@@ -21,4 +21,8 @@ class WordBreak {
         }
         return dp[s.length()];
     }
+    public static void main(String[] args) {
+        WordBreak wb = new WordBreak();
+        System.out.println(wb.wordBreak("hello", List.of("hello")));
+    }
 }
